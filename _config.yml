@@ -32,9 +32,9 @@ plainwhite:
     # microdotblog: jekyll
 
     # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
+    mastodon:
+    - username: jekyll
+      instance: https://danielzzhou.github.io/nu-cmu/
     # - username: jekyll2
     #   instance: example.com
 
