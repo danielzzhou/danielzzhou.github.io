@@ -10,6 +10,7 @@ sass:
 plainwhite:
   name: Daniel Zhou
   tagline: Data and Quant Stuff
+  post: View Blog Posts
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
 
