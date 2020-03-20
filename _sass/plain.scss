@@ -43,6 +43,7 @@ main {
 	display: flex;
 	justify-content:center;
 	height: 100%;
+	position:relative;
 	
 
 	@media screen and (min-width: $bigScreenW) {
