@@ -3,7 +3,7 @@
 <head>
 	{%- include head.html -%}
 <style>
-.button {
+button {
     --color: #A9A9A9;
     --color-hover: var(--color);
     --background: #f5f5f5;
@@ -26,7 +26,13 @@
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     color: var(--c, var(--color));
     background: var(--b, var(--background));
-    transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
+	transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
+	
+	color: #000;
+	transition: color 0.3s;
+	&:hover {
+		color: #5C86FF;
+	}
 }
 
     
@@ -53,7 +59,7 @@ html {
 		<section class="about">
 			<br>
 			<br><br>
-			<br><br>
+			<br>
 			<br>
 			<a href="/nu-cmu/index.html"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
 			<h2>{{ site.plainwhite.name }}</h2>
