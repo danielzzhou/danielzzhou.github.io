@@ -106,6 +106,36 @@ main {
 			max-width: 150px;
 		}
 	}
+	.button{
+		--color: #A9A9A9;
+		--color-hover: var(--color);
+		--background: #f5f5f5;
+		--background-hover: var(--background);
+		--hover-back: #6D58FF;
+		--hover-front: #5C86FF;
+		padding: 8px 28px;
+		border-radius: 20px;
+		line-height: 24px;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: .02em;
+		border: none;
+		outline: none;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		-webkit-appearance: none;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-mask-image: -webkit-radial-gradient(white, black);
+		color: var(--c, var(--color));
+		background: var(--b, var(--background));
+		transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
+		
+		transition: color 0.3s;
+		&:hover {
+			color: #5C86FF;
+		}
+	}
 }
 .social {
 	list-style-type: none;
