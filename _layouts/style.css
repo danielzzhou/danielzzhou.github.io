@@ -110,10 +110,10 @@
 }
 
 .running-button {
-  --color: #F6F8FF;
-  --background: #6D58FF;
-  --background-hover: #6049ff;
-  --background-active: #362A89;
+  --color: #696969;
+  --background: #A9A9A9;
+  --background-hover: #C0C0C0;
+  --background-active: #696969;
   --background-active-hover: #2e2475;
   --shadow: rgba(0, 9, 61, 0.2);
   --padding-y: 12px;
