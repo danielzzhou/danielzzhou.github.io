@@ -3,168 +3,6 @@
 <head>
 	{%- include head.html -%}
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">-->
-<style>
-.button.alternative {
-  --color-hover: #2B3044;
-  --background: #362A89;
-  --hover-back: #6D58FF;
-  --hover-front: #F6F8FF;
-}
-.button.simple {
-  --background: #275EFE;
-  --background-hover: #1749DB;
-}
-
-.button {
-	--color: #A9A9A9;
-	--color-hover: var(--color);
-	--background: #f5f5f5;
-	--background-hover: var(--background);
-	--hover-back: #6D58FF;
-	--hover-front: $linkColor;
-	padding: 8px 28px;
-	border-radius: 20px;
-	line-height: 24px;
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: .02em;
-	border: none;
-	outline: none;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-	-webkit-appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-mask-image: -webkit-radial-gradient(white, black);
-	color: var(--c, var(--color));
-	background: var(--b, var(--background));
-	transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
-	
-	transition: color 0.3s;
-	&:hover {
-		color: $linkColor;
-		}
-}
-.button:not(.simple):before, .button:not(.simple):after {
-  content: '';
-  position: absolute;
-  background: var(--pb, var(--hover-back));
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200%;
-  border-radius: var(--br, 40%);
-  -webkit-transform: translateY(var(--y, 50%));
-          transform: translateY(var(--y, 50%));
-  -webkit-transition: border-radius 0.5s ease var(--br-d, 0.08s), -webkit-transform var(--d, 0.4s) ease-in var(--d-d, 0s);
-  transition: border-radius 0.5s ease var(--br-d, 0.08s), -webkit-transform var(--d, 0.4s) ease-in var(--d-d, 0s);
-  transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s), border-radius 0.5s ease var(--br-d, 0.08s);
-  transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s), border-radius 0.5s ease var(--br-d, 0.08s), -webkit-transform var(--d, 0.4s) ease-in var(--d-d, 0s);
-}
-.button:not(.simple):after {
-  --pb: var(--hover-front);
-  --d: .44s;
-}
-.button div {
-  z-index: 1;
-  position: relative;
-  display: -webkit-box;
-  display: flex;
-}
-.button div span {
-  display: block;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-animation: var(--name, none) 0.7s linear forwards 0.18s;
-          animation: var(--name, none) 0.7s linear forwards 0.18s;
-}
-.button.in {
-  --name: move;
-}
-.button.in:not(.out) {
-  --c: var(--color-hover);
-  --b: var(--background-hover);
-}
-.button.in:not(.out):before, .button.in:not(.out):after {
-  --y: 0;
-  --br: 5%;
-}
-.button.in:not(.out):after {
-  --br: 10%;
-  --d-d: .02s;
-}
-.button.in.out {
-  --name: move-out;
-}
-.button.in.out:before {
-  --d-d: .06s;
-}
-
-@-webkit-keyframes move {
-  30%,
-    36% {
-    -webkit-transform: translateY(calc(-6px * var(--move))) translateZ(0) rotate(calc(-13deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-6px * var(--move))) translateZ(0) rotate(calc(-13deg * var(--rotate) * var(--part)));
-  }
-  50% {
-    -webkit-transform: translateY(calc(3px * var(--move))) translateZ(0) rotate(calc(6deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(3px * var(--move))) translateZ(0) rotate(calc(6deg * var(--rotate) * var(--part)));
-  }
-  70% {
-    -webkit-transform: translateY(calc(-2px * var(--move))) translateZ(0) rotate(calc(-3deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-2px * var(--move))) translateZ(0) rotate(calc(-3deg * var(--rotate) * var(--part)));
-  }
-}
-
-@keyframes move {
-  30%,
-    36% {
-    -webkit-transform: translateY(calc(-6px * var(--move))) translateZ(0) rotate(calc(-13deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-6px * var(--move))) translateZ(0) rotate(calc(-13deg * var(--rotate) * var(--part)));
-  }
-  50% {
-    -webkit-transform: translateY(calc(3px * var(--move))) translateZ(0) rotate(calc(6deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(3px * var(--move))) translateZ(0) rotate(calc(6deg * var(--rotate) * var(--part)));
-  }
-  70% {
-    -webkit-transform: translateY(calc(-2px * var(--move))) translateZ(0) rotate(calc(-3deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-2px * var(--move))) translateZ(0) rotate(calc(-3deg * var(--rotate) * var(--part)));
-  }
-}
-@-webkit-keyframes move-out {
-  30%,
-    36% {
-    -webkit-transform: translateY(calc(6px * var(--move))) translateZ(0) rotate(calc(13deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(6px * var(--move))) translateZ(0) rotate(calc(13deg * var(--rotate) * var(--part)));
-  }
-  50% {
-    -webkit-transform: translateY(calc(-3px * var(--move))) translateZ(0) rotate(calc(-6deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-3px * var(--move))) translateZ(0) rotate(calc(-6deg * var(--rotate) * var(--part)));
-  }
-  70% {
-    -webkit-transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
-  }
-}
-@keyframes move-out {
-  30%,
-    36% {
-    -webkit-transform: translateY(calc(6px * var(--move))) translateZ(0) rotate(calc(13deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(6px * var(--move))) translateZ(0) rotate(calc(13deg * var(--rotate) * var(--part)));
-  }
-  50% {
-    -webkit-transform: translateY(calc(-3px * var(--move))) translateZ(0) rotate(calc(-6deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(-3px * var(--move))) translateZ(0) rotate(calc(-6deg * var(--rotate) * var(--part)));
-  }
-  70% {
-    -webkit-transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
-            transform: translateY(calc(2px * var(--move))) translateZ(0) rotate(calc(3deg * var(--rotate) * var(--part)));
-  }
-}
-</style>
-
 <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -178,9 +16,12 @@
 			<img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}">
 			<h2>{{ site.plainwhite.name }}</h2>
 			<p class="tagline">New York | Chicago | Shanghai</p>
-			<p class="tagline" style="font-size: 13px;"></p>
+			<ul class="social" style="margin-top: 10px;">
+				<a href="https://github.com/{{ site.plainwhite.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
+				<a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
+			</ul>
 
-			<button class="running-button">
+			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="running-button">
 				<span class="default">Start</span>
 				<span class="active">Tracking</span>
 				<div class="running">
@@ -193,18 +34,15 @@
 						</div>
 					</div>
 				</div>
-			</button>
+			</button></a>
 			
-			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button" style="margin: 15px;">enter blog</button></a>
+			<!--<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button" style="margin: 15px;">enter blog</button></a>-->
 
 			<br>
 			<br>
 			<!--<p>&copy; 2018</p>-->
 
-		<ul class="social" style="margin-top: 60px;">
-			<a href="https://github.com/{{ site.plainwhite.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
-			<a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
-		</ul>
+
 		</section>
 
 	</main>
