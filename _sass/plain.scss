@@ -42,6 +42,7 @@ h2 {
 main {
 	margin: 0 90px;
 	display: flex;
+	align-items:center;
 	height: 100%;
 
 	@media screen and (min-width: $bigScreenW) {
