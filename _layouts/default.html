@@ -16,30 +16,34 @@
 }
 
 .button {
-  --color: #fff;
-  --color-hover: var(--color);
-  --background: #2B3044;
-  --background-hover: var(--background);
-  --hover-back: #6D58FF;
-  --hover-front: #5C86FF;
-  padding: 8px 28px;
-  border-radius: 20px;
-  line-height: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .02em;
-  border: none;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  color: var(--c, var(--color));
-  background: var(--b, var(--background));
-  -webkit-transition: color 0.2s linear var(--c-d, 0.2s), background 0.3s linear var(--b-d, 0.2s);
-  transition: color 0.2s linear var(--c-d, 0.2s), background 0.3s linear var(--b-d, 0.2s);
+	--color: #A9A9A9;
+	--color-hover: var(--color);
+	--background: #f5f5f5;
+	--background-hover: var(--background);
+	--hover-back: #6D58FF;
+	--hover-front: $linkColor;
+	padding: 8px 28px;
+	border-radius: 20px;
+	line-height: 24px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: .02em;
+	border: none;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	color: var(--c, var(--color));
+	background: var(--b, var(--background));
+	transition: color .2s linear var(--c-d, .2s), background .3s linear var(--b-d, .2s);
+	
+	transition: color 0.3s;
+	&:hover {
+		color: $linkColor;
+		}
 }
 .button:not(.simple):before, .button:not(.simple):after {
   content: '';
@@ -173,7 +177,7 @@
 			<h2>{{ site.plainwhite.name }}</h2>
 			<p class="tagline">New York | Chicago | Shanghai</p>
 			<p class="tagline" style="font-size: 13px;"></p>
-			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button alternative" style="margin: 15px;">enter blog</button></a>
+			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button" style="margin: 15px;">enter blog</button></a>
 
 			<br>
 			<br>
