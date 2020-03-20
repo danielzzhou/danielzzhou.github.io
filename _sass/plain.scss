@@ -40,12 +40,12 @@ h2 {
 	margin: 0.7em 0;
 }
 main {
-	margin: 0 auto;
-	//display: flex;
-	//align-items:center;
+	display: flex;
+	align-items:center;
 	height: 100%;
-	margin-left: auto;
-    margin-right: auto;
+	//margin-left: auto;
+	//margin-right: auto;
+	
 
 	@media screen and (min-width: $bigScreenW) {
 		margin: 0 auto;
@@ -80,8 +80,8 @@ main {
 		//padding-bottom: 15vh;
 		//padding-left: 100 vh;
 		//padding-left: 70vh;
-		margin-left: auto;
-    	margin-right: auto;
+		top:0; left:0; right:0; bottom:0; 
+		margin:auto;
 		@media screen and (max-width: $mobileW) {
 			height: auto;	
 			padding: 10vh 0;
