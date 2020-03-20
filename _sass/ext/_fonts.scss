@@ -38,7 +38,7 @@
   text-transform: none;
  
   /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
+  line-height: 0.5em;
  
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
@@ -52,7 +52,7 @@
   -moz-osx-font-smoothing: grayscale;
  
   /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); 
 }
  
 .icon-calendar:before { content: '\e800'; } /* '' */
