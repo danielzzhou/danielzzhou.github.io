@@ -126,6 +126,28 @@ html {
 </style>
 </head>
 <body>
+	
+	<main class="container">
+		<section class="about">
+			<a href="/nu-cmu/index.html"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
+			<h2>{{ site.plainwhite.name }}</h2>
+			<p class="tagline">{{ site.plainwhite.tagline }}</p>
+			<ul class="social">
+				<a href="https://github.com/{{ site.plainwhite.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
+				<a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
+				
+			</ul>
+
+			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button simple">enter blog</button></a>
+			<br>
+			<br>
+			<p>&copy; 2018</p>
+
+		</section>
+
+	</main>
+	{%- if site.plainwhite.analytics_id -%}
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
 	<script>
 		document.querySelectorAll('.button').forEach(button => {
 
@@ -167,30 +189,7 @@ html {
 		});
 
 		});
-	</script>
 	
-	<main class="container">
-		<section class="about">
-			<a href="/nu-cmu/index.html"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
-			<h2>{{ site.plainwhite.name }}</h2>
-			<p class="tagline">{{ site.plainwhite.tagline }}</p>
-			<ul class="social">
-				<a href="https://github.com/{{ site.plainwhite.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
-				<a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
-				
-			</ul>
-
-			<a href="https://danielzzhou.github.io/nu-cmu/"><button class="button simple">enter blog</button></a>
-			<br>
-			<br>
-			<p>&copy; 2018</p>
-
-		</section>
-
-	</main>
-	{%- if site.plainwhite.analytics_id -%}
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
-	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
